@@ -98,6 +98,7 @@ module Testy
           print 'F'
           @failures << TestFailure.new(suite, method, e)
         end
+        STDOUT.flush
       end
     end
     
