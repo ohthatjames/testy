@@ -93,6 +93,7 @@ module Testy
           test.send(method)
           print "."
         rescue PendingTestException => p
+          print 'P'
           @pendings << TestPending.new(suite, method)
         rescue Exception => e
           print 'F'
