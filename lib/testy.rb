@@ -143,7 +143,13 @@ module Testy
     
     private
     def load_files_from(directory)
-      Dir["#{directory}/*"].each {|file| require file}
+      Dir["#{directory}/*"].each do |file| 
+        if File.directory?(file)
+          load_files_from(file)
+        else
+          require file
+        end
+      end
     end
   end
 end
