@@ -32,6 +32,10 @@ module Testy
       raise AssertionFailure.new(true, assertion) unless assertion
     end
     
+    def assert_equal(expected, got)
+      raise AssertionFailure.new(expected, got) unless expected == got
+    end
+    
     def pending
       raise PendingTestException
     end

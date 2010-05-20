@@ -26,4 +26,12 @@ class TestThis < Testy::TestSuite
     pending
     puts "This line should not be run"
   end
+  
+  def test_equal
+    assert_equal("Hi", "Hi")
+  end
+  
+  def test_not_equal
+    assert_equal("Hi", "Bye")
+  end
 end
