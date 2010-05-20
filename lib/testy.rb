@@ -33,7 +33,7 @@ module Testy
     end
     
     def assert_equal(expected, got)
-      raise AssertionFailure.new(expected, got) unless expected == got
+      raise AssertionFailure.new(expected.inspect, got.inspect) unless expected == got
     end
     
     def pending
